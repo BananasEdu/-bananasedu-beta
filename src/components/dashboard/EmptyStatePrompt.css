@@ -1,0 +1,298 @@
+/* Empty State Container */
+.empty-state-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.empty-state-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border-top: 4px solid var(--warning);
+}
+
+.empty-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: rgba(251, 191, 36, 0.15);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-6);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.empty-icon {
+    color: var(--warning);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.empty-title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+}
+
+.empty-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--border);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-6);
+}
+
+.empty-description {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+}
+
+.empty-features {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+    background: var(--bg-elevated);
+    padding: var(--space-5);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    width: 100%;
+}
+
+.empty-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.check-icon {
+    color: var(--success);
+    font-weight: 900;
+    font-size: var(--text-lg);
+}
+
+.empty-action-btn {
+    width: 100%;
+    justify-content: center;
+    gap: var(--space-3);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px 0 rgba(251, 191, 36, 0.39);
+}
+
+.empty-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 10% 10%, rgba(251, 191, 36, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 90%, rgba(251, 191, 36, 0.05) 0%, transparent 20%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== INFO ROW (Countdown + Pengumuman) ===== */
+.empty-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+}
+
+.empty-info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    transition: all 0.3s ease;
+}
+
+.empty-info-card:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    transform: translateY(-4px);
+}
+
+.info-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: var(--space-4);
+    letter-spacing: 0.05em;
+}
+
+/* ===== COUNTDOWN CARD ===== */
+.countdown-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.countdown-segment {
+    text-align: center;
+}
+
+.countdown-num {
+    display: block;
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.countdown-sep {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: -10px;
+}
+
+.countdown-subtitle {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+/* Urgency Colors */
+.countdown-card.normal .countdown-num {
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.countdown-card.normal {
+    border-top: 3px solid #22c55e;
+}
+
+.countdown-card.warning .countdown-num {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.countdown-card.warning {
+    border-top: 3px solid #fbbf24;
+}
+
+.countdown-card.danger .countdown-num {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: blink 1s infinite;
+}
+
+.countdown-card.danger {
+    border-top: 3px solid #ef4444;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ===== ANNOUNCEMENT CARD ===== */
+.announcement-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.announcement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    padding: var(--space-3);
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+.announcement-item:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.pin-icon {
+    color: #fbbf24;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .empty-info-row {
+        grid-template-columns: 1fr;
+    }
+
+    .empty-state-card {
+        padding: var(--space-6);
+    }
+
+    .empty-title {
+        font-size: var(--text-xl);
+    }
+}

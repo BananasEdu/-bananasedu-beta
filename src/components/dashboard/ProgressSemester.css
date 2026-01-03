@@ -1,0 +1,91 @@
+/* Progress Semester Widget */
+.progress-semester {
+    text-align: center;
+}
+
+.progress-semester-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+}
+
+.semester-dot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.semester-dot::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.semester-dot.filled::before {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    border-color: transparent;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.semester-label {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+}
+
+.semester-dot.filled .semester-label {
+    color: var(--text-primary);
+}
+
+.progress-semester-track {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: var(--space-3);
+}
+
+.progress-semester-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #a855f7, #ec4899);
+    border-radius: var(--radius-full);
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-semester-text {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-1);
+}
+
+.progress-semester-text .uploaded {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.progress-semester-text .separator {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.progress-semester-text .total {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.progress-semester-text .label {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.4);
+    margin-left: var(--space-1);
+}

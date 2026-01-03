@@ -1,0 +1,236 @@
+/* PeringkatPage.css - Beta Disabled Feature Page */
+
+.peringkat-page {
+    min-height: 80vh;
+    padding: var(--space-6) 0;
+}
+
+.peringkat-container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+/* Empty State Section */
+.empty-state-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-10) var(--space-6);
+}
+
+.empty-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    margin-bottom: var(--space-6);
+}
+
+.icon-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+}
+
+.trophy-icon {
+    color: rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
+    animation: trophyFloat 4s ease-in-out infinite;
+}
+
+@keyframes trophyFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.empty-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--space-3);
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.empty-subtitle {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 400px;
+}
+
+/* Feature Info Card */
+.feature-info-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-5) var(--space-6);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card-icon {
+    color: #a855f7;
+}
+
+.card-header h2 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: #fff;
+}
+
+.card-content {
+    padding: var(--space-6);
+}
+
+.card-description {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+}
+
+/* Feature List */
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(139, 92, 246, 0.2);
+    transform: translateX(4px);
+}
+
+.feature-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+    border-radius: 12px;
+    color: #a855f7;
+    flex-shrink: 0;
+}
+
+.feature-text h3 {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.feature-text p {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+}
+
+/* Coming Soon Badge */
+.coming-soon-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-6);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.badge-icon {
+    font-size: 1.25rem;
+}
+
+.coming-soon-badge span:last-child {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .empty-state-section {
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .empty-icon-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .trophy-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .empty-title {
+        font-size: var(--text-xl);
+    }
+
+    .card-content {
+        padding: var(--space-4);
+    }
+
+    .feature-item {
+        padding: var(--space-3);
+    }
+
+    .feature-icon-wrap {
+        width: 38px;
+        height: 38px;
+    }
+}

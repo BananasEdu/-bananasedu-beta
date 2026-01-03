@@ -1,0 +1,7 @@
+/* App.css - Global app styles */
+/* Using 2025 Design System from index.css */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
