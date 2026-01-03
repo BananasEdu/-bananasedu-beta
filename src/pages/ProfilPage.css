@@ -126,6 +126,50 @@
     color: #ef4444;
 }
 
+/* ===== FEEDBACK DROPDOWN (mobile) ===== */
+.feedback-type-select {
+    margin-bottom: var(--space-4, 1rem);
+}
+
+.feedback-type-select label {
+    display: block;
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--text-muted, rgba(255, 255, 255, 0.5));
+    margin-bottom: var(--space-2, 0.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.feedback-dropdown {
+    width: 100%;
+    padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+    background: rgba(22, 22, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl, 12px);
+    color: var(--text-primary, #ffffff);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+}
+
+.feedback-dropdown:focus {
+    border-color: var(--primary, #fbbf24);
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15);
+}
+
+.feedback-dropdown option {
+    background: #16161e;
+    color: #fff;
+}
+
 /* ===== FEEDBACK TEXTAREA ===== */
 .feedback-textarea {
     width: 100%;
@@ -453,6 +497,7 @@
     font-size: var(--text-sm, 0.875rem);
     font-weight: 600;
     color: #fff;
+    text-align: left;
 }
 
 /* ===== PASSWORD FORM ===== */

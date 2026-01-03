@@ -593,19 +593,16 @@ export default function ProfilPage() {
                     {/* Kirim Feedback */}
                     <div className="profile-section-card">
                         <h2 className="section-title">📨 Kirim Feedback</h2>
-                        <div className="feedback-tabs">
-                            <button
-                                className={`feedback-tab tab-saran ${feedbackType === 'saran' ? 'active' : ''}`}
-                                onClick={() => setFeedbackType('saran')}
+                        <div className="feedback-type-select">
+                            <label>Jenis Feedback</label>
+                            <select
+                                value={feedbackType}
+                                onChange={(e) => setFeedbackType(e.target.value as 'saran' | 'kritik')}
+                                className="feedback-dropdown"
                             >
-                                💡 Saran
-                            </button>
-                            <button
-                                className={`feedback-tab tab-kritik ${feedbackType === 'kritik' ? 'active' : ''}`}
-                                onClick={() => setFeedbackType('kritik')}
-                            >
-                                ⚠️ Kritik
-                            </button>
+                                <option value="saran">💡 Saran</option>
+                                <option value="kritik">⚠️ Kritik</option>
+                            </select>
                         </div>
                         <textarea
                             className="feedback-textarea"

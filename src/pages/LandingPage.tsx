@@ -53,6 +53,7 @@ const LandingPage: React.FC = () => {
                     <Link to="/" className="logo">
                         <span className="logo-icon">🍌</span>
                         <span className="logo-text">BananasEdu</span>
+                        <span className="beta-badge">Beta</span>
                     </Link>
 
                     <div className="header-actions">
