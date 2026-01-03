@@ -529,3 +529,150 @@
         height: 44px;
     }
 }
+
+@media (max-width: 480px) {
+
+    /* Stat Grid - Single Column on very small screens */
+    .stat-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+        margin-bottom: var(--space-5);
+    }
+
+    .stat-card {
+        padding: var(--space-3);
+        border-radius: 16px;
+        flex-direction: row;
+        text-align: left;
+        gap: var(--space-3);
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: var(--text-xs);
+    }
+
+    /* Widget Row */
+    .widget-row {
+        gap: var(--space-3);
+        margin-bottom: var(--space-4);
+    }
+
+    .widget-card {
+        padding: var(--space-4);
+        border-radius: 16px;
+    }
+
+    .widget-header {
+        margin-bottom: var(--space-3);
+        font-size: var(--text-xs);
+    }
+
+    /* Pending List */
+    .pending-item {
+        padding: var(--space-3);
+        border-radius: var(--radius-lg);
+    }
+
+    .pending-name {
+        font-size: var(--text-xs);
+    }
+
+    .pending-class {
+        font-size: 10px;
+    }
+
+    .pending-avg {
+        font-size: var(--text-sm);
+    }
+
+    /* Feedback List */
+    .feedback-item {
+        padding: var(--space-3);
+        gap: var(--space-3);
+    }
+
+    .feedback-icon {
+        font-size: 1rem;
+    }
+
+    .feedback-message {
+        font-size: var(--text-xs);
+    }
+
+    .feedback-meta {
+        font-size: 10px;
+    }
+
+    /* Class Progress Table */
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr 40px 40px 40px 80px;
+        font-size: 10px;
+        padding: var(--space-2);
+    }
+
+    .table-row {
+        border-radius: var(--radius-md);
+    }
+
+    .class-name {
+        font-size: var(--text-xs);
+    }
+
+    .mini-progress {
+        display: none;
+    }
+
+    /* Activity List */
+    .activity-item {
+        padding: var(--space-3) 0;
+        gap: var(--space-3);
+    }
+
+    .activity-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .activity-content {
+        font-size: var(--text-xs);
+    }
+
+    .activity-time {
+        font-size: 10px;
+    }
+
+    /* Progress Display */
+    .progress-bar {
+        height: 10px;
+        margin-bottom: var(--space-3);
+    }
+
+    .progress-percent {
+        font-size: var(--text-base);
+    }
+
+    .progress-count {
+        font-size: var(--text-xs);
+    }
+
+    /* Ranking Status */
+    .status-badge {
+        padding: var(--space-1) var(--space-3);
+        font-size: var(--text-xs);
+    }
+
+    .status-info {
+        font-size: var(--text-xs);
+    }
+}

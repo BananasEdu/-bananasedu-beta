@@ -234,3 +234,110 @@
         height: 38px;
     }
 }
+
+/* ============================================
+   MOBILE RESPONSIVE (480px and below)
+   ============================================ */
+@media (max-width: 480px) {
+    .peringkat-page {
+        padding: var(--space-4) 0;
+    }
+
+    .peringkat-container {
+        gap: var(--space-5);
+        padding: 0 var(--space-3);
+    }
+
+    /* Empty State */
+    .empty-state-section {
+        padding: var(--space-6) var(--space-3);
+    }
+
+    .empty-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin-bottom: var(--space-4);
+    }
+
+    .trophy-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .empty-title {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-2);
+    }
+
+    .empty-subtitle {
+        font-size: var(--text-sm);
+    }
+
+    /* Feature Info Card */
+    .feature-info-card {
+        border-radius: 16px;
+    }
+
+    .card-header {
+        padding: var(--space-4);
+        gap: var(--space-2);
+    }
+
+    .card-header h2 {
+        font-size: var(--text-base);
+    }
+
+    .card-content {
+        padding: var(--space-3);
+    }
+
+    .card-description {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-4);
+    }
+
+    /* Feature List */
+    .feature-list {
+        gap: var(--space-2);
+        margin-bottom: var(--space-4);
+    }
+
+    .feature-item {
+        padding: var(--space-2) var(--space-3);
+        gap: var(--space-3);
+        border-radius: 10px;
+    }
+
+    .feature-icon-wrap {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+    }
+
+    .feature-icon-wrap svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .feature-text h3 {
+        font-size: var(--text-xs);
+    }
+
+    .feature-text p {
+        font-size: 10px;
+    }
+
+    /* Coming Soon Badge */
+    .coming-soon-badge {
+        padding: var(--space-3) var(--space-4);
+        border-radius: 10px;
+    }
+
+    .badge-icon {
+        font-size: 1rem;
+    }
+
+    .coming-soon-badge span:last-child {
+        font-size: var(--text-xs);
+    }
+}

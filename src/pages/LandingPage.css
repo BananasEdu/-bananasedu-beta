@@ -675,26 +675,183 @@
 }
 
 @media (max-width: 480px) {
+
+    /* ===== HEADER MOBILE ===== */
+    .landing-header {
+        padding: var(--space-3) 0;
+    }
+
+    .header-actions {
+        gap: var(--space-2);
+    }
+
+    .btn-login-header,
+    .btn-register-header {
+        padding: 8px 12px;
+        font-size: var(--text-xs);
+        border-radius: 10px;
+    }
+
+    .btn-login-header svg,
+    .btn-register-header svg {
+        display: none;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .logo-text {
+        font-size: var(--text-lg);
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* ===== HERO MOBILE ===== */
+    .hero-section {
+        padding: 120px 0 60px;
+        min-height: auto;
+    }
+
     .hero-title {
-        font-size: 1.875rem;
+        font-size: 1.75rem;
+        margin-bottom: var(--space-4);
+    }
+
+    .hero-subtitle {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-6);
+        padding: 0 var(--space-2);
+    }
+
+    .hero-banana-icon {
+        font-size: 3.5rem;
+        margin-bottom: var(--space-4);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--space-3);
+    }
+
+    .btn-hero {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: var(--text-sm);
+        border-radius: 14px;
+    }
+
+    /* ===== STATS MOBILE - 2x2 Grid ===== */
+    .stats-section {
+        padding: var(--space-10) 0;
+    }
+
+    .section-title {
+        font-size: var(--text-xl);
+        margin-bottom: var(--space-6);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-3);
+    }
+
+    .stat-card {
+        padding: var(--space-5);
+        border-radius: 16px;
+    }
+
+    .stat-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        margin-bottom: var(--space-2);
+    }
+
+    .stat-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .stat-card .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .stat-card .stat-label {
+        font-size: var(--text-xs);
+    }
+
+    /* ===== BENTO GRID MOBILE ===== */
+    .features-section {
+        padding: var(--space-10) 0;
     }
 
     .bento-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-3);
     }
 
     .bento-large,
     .bento-medium,
     .bento-small {
         grid-column: span 1;
+        padding: var(--space-5);
+        border-radius: 16px;
     }
 
-    .btn-hero {
-        width: 100%;
-        justify-content: center;
+    .bento-icon {
+        font-size: 2.5rem;
+        margin-bottom: var(--space-3);
+    }
+
+    .bento-title {
+        font-size: var(--text-base);
+    }
+
+    .bento-description {
+        font-size: var(--text-xs);
+    }
+
+    /* ===== CTA MOBILE ===== */
+    .cta-section {
+        padding: var(--space-10) 0;
+    }
+
+    .cta-card {
+        padding: 32px 20px;
+        border-radius: 20px;
     }
 
     .cta-title {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
+    }
+
+    .cta-subtitle {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-6);
+    }
+
+    /* ===== FOOTER MOBILE ===== */
+    .landing-footer {
+        padding: var(--space-6) 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+    }
+
+    .copyright {
+        font-size: var(--text-xs);
+    }
+
+    .contact-link {
+        font-size: var(--text-xs);
     }
 }

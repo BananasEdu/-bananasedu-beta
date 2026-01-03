@@ -236,35 +236,195 @@
     padding: 0 var(--space-6);
 }
 
-/* Mobile Bottom Nav (if needed) */
+/* ==============================================
+   MOBILE BOTTOM NAVIGATION BAR
+   ============================================== */
+.mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(16, 16, 22, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-2) var(--space-3);
+    padding-bottom: calc(var(--space-2) + env(safe-area-inset-bottom, 0px));
+    z-index: 1000;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-bottom-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), rgba(236, 72, 153, 0.5), transparent);
+}
+
+/* Bottom Nav Items */
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: var(--space-2);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    min-width: 60px;
+    position: relative;
+}
+
+.bottom-nav-item:active {
+    transform: scale(0.95);
+}
+
+.bottom-nav-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.bottom-nav-item.active {
+    color: #fff;
+}
+
+.bottom-nav-item.active::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 3px;
+    background: linear-gradient(90deg, #a855f7, #ec4899);
+    border-radius: 3px;
+}
+
+.bottom-nav-item.active svg {
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
+}
+
+.bottom-nav-item span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* ==============================================
+   MOBILE RESPONSIVE - 768px and below
+   ============================================== */
 @media (max-width: 768px) {
-    .nav-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: auto;
-        border-bottom: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        padding: var(--space-2) var(--space-4);
-    }
 
-    .main-nav {
+    /* Show mobile bottom nav */
+    .mobile-bottom-nav {
+        display: flex;
         justify-content: space-around;
+        align-items: center;
     }
 
-    .nav-link {
-        flex-direction: column;
-        gap: 4px;
-        padding: 8px 12px;
-        font-size: 11px;
-    }
-
-    .nav-link.active::after {
+    /* Hide top nav links on mobile */
+    .main-nav {
         display: none;
     }
 
+    /* Adjust top bar for mobile */
+    .top-bar {
+        padding: var(--space-2) 0;
+    }
+
+    .top-bar-content {
+        justify-content: space-between;
+    }
+
+    /* Smaller logo on mobile */
+    .logo-text {
+        font-size: var(--text-base);
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .beta-badge {
+        font-size: 9px;
+        padding: 2px 6px;
+    }
+
+    /* Smaller action buttons */
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+    }
+
+    .icon-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Add padding to main content for bottom nav */
     .main-content {
-        padding-bottom: 80px;
+        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
+/* ==============================================
+   MOBILE RESPONSIVE - 480px and below
+   ============================================== */
+@media (max-width: 480px) {
+    .top-bar {
+        padding: var(--space-2) 0;
+    }
+
+    .top-bar-content {
+        padding: 0 var(--space-3);
+    }
+
+    .logo-icon {
+        font-size: 1.25rem;
+    }
+
+    .logo-text {
+        font-size: var(--text-sm);
+    }
+
+    .beta-badge {
+        display: none;
+    }
+
+    .icon-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .notification-badge {
+        min-width: 16px;
+        height: 16px;
+        font-size: 9px;
+        top: -3px;
+        right: -3px;
+    }
+
+    /* Bottom nav adjustments */
+    .bottom-nav-item {
+        min-width: auto;
+        padding: var(--space-1) var(--space-2);
+        font-size: 9px;
+    }
+
+    .bottom-nav-item svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .main-content {
+        padding: var(--space-4) 0;
+        padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
     }
 }

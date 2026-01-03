@@ -1040,3 +1040,194 @@ body.light-mode .password-requirements li.valid {
         margin-top: var(--space-1, 0.25rem);
     }
 }
+
+/* ============================================
+   MOBILE RESPONSIVE (480px and below)
+   ============================================ */
+@media (max-width: 480px) {
+
+    /* Main Container */
+    .profil-main {
+        padding: var(--space-4) 0 var(--space-10);
+    }
+
+    .container {
+        padding: 0 var(--space-3);
+    }
+
+    /* Profile Header Card */
+    .profile-header-card {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-5);
+        border-radius: 20px;
+        margin-bottom: var(--space-4);
+    }
+
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .avatar-initials {
+        font-size: 1.5rem;
+    }
+
+    .profile-name {
+        font-size: 1.25rem;
+    }
+
+    .profile-username {
+        font-size: var(--text-xs);
+    }
+
+    .profile-badges {
+        justify-content: center;
+    }
+
+    .badge {
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+
+    /* Section Cards */
+    .profile-section-card {
+        padding: var(--space-4);
+        border-radius: 16px;
+        margin-bottom: var(--space-4);
+    }
+
+    .section-title {
+        font-size: var(--text-base);
+        margin-bottom: var(--space-4);
+    }
+
+    /* Info List */
+    .profile-info-list {
+        gap: var(--space-2);
+    }
+
+    .info-row {
+        padding: var(--space-2) var(--space-3);
+        border-radius: 10px;
+    }
+
+    .info-row svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .info-row .info-label,
+    .info-row .info-value {
+        font-size: var(--text-xs);
+    }
+
+    /* Form Inputs */
+    .form-group input,
+    .profile-edit-form select {
+        padding: var(--space-3);
+        font-size: 16px;
+        /* Prevents iOS zoom */
+        min-height: 48px;
+        border-radius: 10px;
+    }
+
+    .form-group label {
+        font-size: var(--text-xs);
+    }
+
+    /* Buttons */
+    .password-toggle-btn,
+    .quick-action-btn {
+        padding: var(--space-3);
+        font-size: var(--text-sm);
+        min-height: 44px;
+    }
+
+    .logout-btn {
+        padding: var(--space-4);
+        min-height: 48px;
+    }
+
+    .btn {
+        padding: var(--space-3);
+        min-height: 44px;
+    }
+
+    /* Feedback Section */
+    .feedback-tabs {
+        gap: var(--space-1);
+    }
+
+    .feedback-tab {
+        padding: var(--space-2);
+        font-size: var(--text-xs);
+    }
+
+    .feedback-textarea {
+        min-height: 80px;
+        font-size: 16px;
+        padding: var(--space-3);
+    }
+
+    .feedback-submit {
+        padding: var(--space-3);
+        min-height: 48px;
+    }
+
+    /* Feedback History */
+    .feedback-card {
+        padding: var(--space-3);
+        border-radius: 10px;
+    }
+
+    .feedback-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-1);
+    }
+
+    .type-badge {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+
+    .feedback-message {
+        font-size: var(--text-xs);
+    }
+
+    .feedback-status {
+        font-size: 10px;
+    }
+
+    /* Toast Notification */
+    .toast {
+        width: calc(100% - var(--space-6));
+        font-size: var(--text-xs);
+        padding: var(--space-3) var(--space-4);
+        border-radius: 10px;
+    }
+
+    /* Edit Actions */
+    .edit-actions {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    .password-actions {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    /* Section Header */
+    .section-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .btn-icon {
+        width: 32px;
+        height: 32px;
+    }
+}

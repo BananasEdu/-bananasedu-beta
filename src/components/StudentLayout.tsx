@@ -81,6 +81,26 @@ const StudentLayout: React.FC<StudentLayoutProps> = ({ theme }) => {
                     <Outlet />
                 </div>
             </main>
+
+            {/* Mobile Bottom Navigation Bar */}
+            <nav className="mobile-bottom-nav">
+                <Link to="/dashboard" className={`bottom-nav-item ${isActive('/dashboard') ? 'active' : ''}`}>
+                    <LayoutDashboard size={22} />
+                    <span>Home</span>
+                </Link>
+                <Link to="/e-rapor" className={`bottom-nav-item ${isActive('/e-rapor') ? 'active' : ''}`}>
+                    <FileText size={22} />
+                    <span>E-Rapor</span>
+                </Link>
+                <Link to="/peringkat" className={`bottom-nav-item ${isActive('/peringkat') ? 'active' : ''}`}>
+                    <Trophy size={22} />
+                    <span>Ranking</span>
+                </Link>
+                <Link to="/profil" className={`bottom-nav-item ${isActive('/profil') ? 'active' : ''}`}>
+                    <User size={22} />
+                    <span>Profil</span>
+                </Link>
+            </nav>
         </div>
     );
 };

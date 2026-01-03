@@ -3709,3 +3709,231 @@ tr.highlighted {
 .username-cell svg {
     color: var(--text-muted);
 }
+
+/* ============================================
+   ADMIN MOBILE RESPONSIVE (480px and below)
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* Pane Header */
+    .pane-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+
+    .pane-header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        flex-wrap: wrap;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    /* Table Container */
+    .table-container {
+        margin: 0 calc(-1 * var(--space-4));
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-xs);
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+        gap: 2px;
+    }
+
+    .icon-btn-sm {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icon-btn-sm svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Wizard Grid */
+    .wizard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wizard-card {
+        padding: var(--space-4);
+    }
+
+    .wizard-card .card-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    /* Wizard Breadcrumb */
+    .wizard-breadcrumb {
+        padding: var(--space-2);
+        gap: var(--space-1);
+    }
+
+    .breadcrumb-item {
+        padding: 4px 8px;
+        font-size: var(--text-xs);
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Glass Card */
+    .glass-card {
+        padding: var(--space-4);
+        border-radius: var(--radius-xl);
+    }
+
+    .glass-card-sm {
+        padding: var(--space-3);
+    }
+
+    /* Form Input */
+    .form-input,
+    .form-textarea,
+    .admin-select {
+        max-width: 100%;
+        font-size: 16px;
+        /* Prevents iOS zoom */
+        min-height: 44px;
+        padding: var(--space-3);
+    }
+
+    .form-label {
+        font-size: var(--text-xs);
+    }
+
+    /* Toggle Row */
+    .toggle-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+
+    .toggle-switch {
+        align-self: flex-end;
+    }
+
+    /* Buttons */
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: var(--space-3);
+        min-height: 44px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-sm {
+        padding: var(--space-2) var(--space-3);
+        min-height: 36px;
+    }
+
+    /* Filter Pills */
+    .filter-pills {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        max-width: 100%;
+    }
+
+    .filter-pill {
+        flex-shrink: 0;
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+
+    /* Status Badge */
+    .status-badge {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    /* Modal Overlay - Full Screen */
+    .modal-overlay .modal-content,
+    .modal-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+    }
+
+    .modal-header {
+        padding: var(--space-4);
+    }
+
+    .modal-body {
+        padding: var(--space-4);
+    }
+
+    .modal-footer {
+        padding: var(--space-4);
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    /* Settings Section */
+    .settings-grid {
+        gap: var(--space-2);
+    }
+
+    /* Stat Cards */
+    .stat-cards {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .stat-card {
+        padding: var(--space-4);
+    }
+
+    /* Log Activity Page */
+    .log-activity-page {
+        padding: var(--space-3);
+    }
+
+    .action-badge {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+
+    /* Kelola Data Page Form */
+    .form-row-2,
+    .form-row-3 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Confirmation Dialog */
+    .confirm-dialog {
+        width: calc(100% - var(--space-6));
+        padding: var(--space-5);
+    }
+
+    .confirm-actions {
+        flex-direction: column;
+    }
+}

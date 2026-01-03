@@ -456,26 +456,95 @@
 /* Responsive */
 @media (max-width: 480px) {
     .login-page {
-        padding: var(--space-4);
+        padding: var(--space-3);
+        align-items: flex-start;
+        padding-top: var(--space-10);
+    }
+
+    .login-card {
+        max-width: 100%;
     }
 
     .login-form {
-        padding: var(--space-6);
-        border-radius: 24px;
+        padding: var(--space-5);
+        border-radius: 20px;
+    }
+
+    .form-header {
+        margin-bottom: var(--space-6);
     }
 
     .form-header .logo-icon {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        margin-bottom: var(--space-2);
     }
 
     .form-header .logo-text {
-        font-size: var(--text-xl);
+        font-size: var(--text-lg);
+    }
+
+    .form-header .subtitle {
+        font-size: var(--text-base);
+    }
+
+    .form-header .description {
+        font-size: var(--text-xs);
+    }
+
+    /* Larger inputs for better touch */
+    .input-group input {
+        padding: 16px 18px;
+        font-size: 16px;
+        /* Prevents iOS zoom on focus */
+        border-radius: 12px;
+        min-height: 52px;
+    }
+
+    .input-group label {
+        font-size: var(--text-xs);
     }
 
     .form-options {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--space-3);
+    }
+
+    .remember-me {
+        order: 2;
+    }
+
+    .forgot-link {
+        order: 1;
+        align-self: flex-end;
+    }
+
+    /* Larger login button */
+    .btn-login {
+        padding: 18px;
+        font-size: var(--text-base);
+        border-radius: 14px;
+        min-height: 56px;
+    }
+
+    .toggle-password {
+        padding: 10px;
+        right: 8px;
+    }
+
+    .back-link {
+        margin-top: var(--space-4);
+        padding: var(--space-3);
+    }
+
+    .error-message {
+        padding: 12px 14px;
+        font-size: var(--text-xs);
+        border-radius: 10px;
+    }
+
+    .register-link {
+        font-size: var(--text-xs);
     }
 }
 
