@@ -179,8 +179,6 @@ export default function ERaporPage() {
     const [editingSubjectName, setEditingSubjectName] = useState('');
 
     // Flexi-Calc states
-    const [selectedMapel, setSelectedMapel] = useState<string[]>([]);
-    const [selectedSemesters, setSelectedSemesters] = useState<number[]>([1, 2, 3, 4, 5]);
 
     const [targetAverage, setTargetAverage] = useState(90);
 
@@ -228,17 +226,11 @@ export default function ERaporPage() {
         });
     };
 
-    // Update selected semesters for Flexi-Calc when activeSemesters change
-    useEffect(() => {
-        setSelectedSemesters(activeSemesters);
-    }, [activeSemesters]);
+
 
     // Sync to server
     const syncToServer = async (data: BetaSubject[]) => {
         if (!user?.id || !API_URL) return;
-
-        setIsSyncing(true);
-        setSyncError(null);
 
         try {
             const response = await fetch(API_URL, {
@@ -253,12 +245,10 @@ export default function ERaporPage() {
 
             const result = await response.json();
             if (!result.success) {
-                setSyncError(result.error || 'Gagal sync ke server');
+                console.error(result.error || 'Gagal sync ke server');
             }
         } catch (err) {
-            setSyncError('Gagal terhubung ke server');
-        } finally {
-            setIsSyncing(false);
+            console.error('Gagal terhubung ke server');
         }
     };
 
@@ -295,7 +285,6 @@ export default function ERaporPage() {
             const serverData = await loadFromServer();
             if (serverData && serverData.length > 0) {
                 setSubjects(serverData);
-                setSelectedMapel(serverData.map((s: BetaSubject) => s.id));
                 // Also update localStorage as cache
                 localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(serverData));
             } else {
@@ -305,14 +294,11 @@ export default function ERaporPage() {
                     try {
                         const parsed = JSON.parse(savedData);
                         setSubjects(parsed);
-                        setSelectedMapel(parsed.map((s: BetaSubject) => s.id));
                     } catch (e) {
                         setSubjects(defaultSubjects);
-                        setSelectedMapel(defaultSubjects.map(s => s.id));
                     }
                 } else {
                     setSubjects(defaultSubjects);
-                    setSelectedMapel(defaultSubjects.map(s => s.id));
                 }
             }
 
@@ -356,7 +342,6 @@ export default function ERaporPage() {
             saveToLocalStorage(updated);
             return updated;
         });
-        setSelectedMapel(prev => [...prev, newSubject.id]);
         setNewSubjectName('');
         setShowAddSubjectModal(false);
     };
@@ -369,7 +354,6 @@ export default function ERaporPage() {
             saveToLocalStorage(updated);
             return updated;
         });
-        setSelectedMapel(prev => prev.filter(sid => sid !== id));
     };
 
     // Rename subject
@@ -411,10 +395,8 @@ export default function ERaporPage() {
     const overallGrade = getGradeInfo(totalAverage);
 
     // Flexi-Calc calculations
-    const flexiSubjects = subjects.filter(s => selectedMapel.includes(s.id));
-    const flexiAverage = flexiSubjects.length > 0
-        ? flexiSubjects.reduce((acc, s) => acc + getSubjectAvg(s, selectedSemesters), 0) / flexiSubjects.length
-        : 0;
+
+
 
 
     // Target Booster calculations - Auto-detect last filled semester
