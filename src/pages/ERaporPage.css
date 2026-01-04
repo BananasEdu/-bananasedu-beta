@@ -2803,7 +2803,7 @@
         white-space: nowrap;
     }
 
-    /* === GRADE TABLE MOBILE - Smaller text === */
+    /* === GRADE TABLE MOBILE - Readable sizes matching reference === */
     .grade-table-container {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -2812,18 +2812,20 @@
     }
 
     .grade-table {
-        min-width: 450px;
-        font-size: 9px;
+        min-width: 600px;
+        font-size: 13px;
     }
 
     .grade-table th,
     .grade-table td {
-        padding: 4px 6px;
-        min-width: 32px;
+        padding: 10px 8px;
+        min-width: 44px;
     }
 
     .grade-table th {
-        font-size: 8px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     .grade-table th:first-child,
@@ -2832,30 +2834,48 @@
         left: 0;
         z-index: 5;
         background: var(--bg-card);
-        min-width: 80px;
-        font-size: 9px;
+        min-width: 120px;
+        font-size: 13px;
+        font-weight: 500;
     }
 
     .grade-table.editable .grade-input {
-        width: 32px;
-        padding: 2px;
-        font-size: 10px;
-        min-height: 28px;
+        width: 44px;
+        padding: 6px 4px;
+        font-size: 14px;
+        min-height: 36px;
+        font-weight: 600;
     }
 
     .td-actions {
-        gap: 2px;
+        gap: 4px;
     }
 
     .action-icon-btn {
-        width: 22px;
-        height: 22px;
-        min-width: 22px;
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
     }
 
     .action-icon-btn svg {
-        width: 10px;
-        height: 10px;
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Rata-rata column */
+    .td-avg .avg-value {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .td-avg .avg-category {
+        font-size: 11px;
+    }
+
+    /* Grade badge */
+    .td-grade .grade-badge {
+        font-size: 12px;
+        padding: 4px 8px;
     }
 
     /* Header Actions */
@@ -2866,41 +2886,86 @@
 
     .header-actions button {
         padding: var(--space-2) var(--space-3);
-        font-size: var(--text-xs);
-        min-height: 36px;
+        font-size: var(--text-sm);
+        min-height: 40px;
     }
 
-    .header-actions button span {
-        display: none;
-    }
-
-    /* Struk Card - Smaller text */
+    /* Struk Card - Readable sizes matching reference */
     .struk-card {
-        padding: var(--space-4);
+        padding: var(--space-5);
         border-radius: var(--radius-xl);
         max-width: 100%;
     }
 
     .struk-header h2 {
-        font-size: var(--text-base);
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .struk-header p {
+        font-size: 11px;
+    }
+
+    .struk-average .avg-label {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .struk-average .avg-value {
+        font-size: 36px !important;
+        font-weight: 800;
+    }
+
+    .struk-average .avg-grade {
+        font-size: 14px;
     }
 
     .struk-table th,
     .struk-table td {
-        padding: 4px 6px;
-        font-size: 9px;
+        padding: 8px 10px;
+        font-size: 13px;
     }
 
     .struk-table th {
-        font-size: 8px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .subjects-header {
+        font-size: 11px;
+    }
+
+    .subject-row {
+        font-size: 13px;
+    }
+
+    .subject-name {
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .subject-avg .val {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .subject-avg .cat {
+        font-size: 10px;
+    }
+
+    .subject-grade {
+        font-size: 14px;
+        font-weight: 700;
     }
 
     .struk-total {
-        font-size: var(--text-sm);
+        font-size: var(--text-base);
     }
 
     .struk-category {
-        font-size: var(--text-lg);
+        font-size: var(--text-xl);
     }
 
     /* Stats Grid in E-Rapor - 3 cards in 1 row */
@@ -2941,7 +3006,14 @@
         font-size: 8px;
     }
 
-    /* Summary Cards - 3 in 1 row */
+    /* Summary Cards - 3 in 1 row horizontal */
+    .summary-cards {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 8px !important;
+        grid-template-columns: unset !important;
+    }
+
     .summary-grid {
         display: flex;
         flex-direction: row;
@@ -2950,16 +3022,25 @@
 
     .summary-card {
         flex: 1;
-        padding: var(--space-2) var(--space-3);
-        border-radius: 12px;
+        min-width: 0;
+        padding: 10px 8px !important;
+        border-radius: 14px !important;
+        text-align: center;
+    }
+
+    .summary-icon {
+        font-size: 18px !important;
+        margin-bottom: 6px;
     }
 
     .summary-value {
-        font-size: var(--text-lg);
+        font-size: 16px !important;
+        font-weight: 700;
     }
 
     .summary-label {
-        font-size: 8px;
+        font-size: 9px !important;
+        line-height: 1.2;
     }
 
     /* Modal - Full Screen on Mobile */
