@@ -62,40 +62,40 @@
   --glass-blur: 20px;
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-  /* ===== TYPOGRAPHY - Fluid Responsive ===== */
+  /* ===== TYPOGRAPHY ===== */
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Type Scale - Fluid with clamp() for responsive */
-  --text-xs: clamp(0.65rem, 1.5vw, 0.75rem);
-  --text-sm: clamp(0.75rem, 2vw, 0.875rem);
-  --text-base: clamp(0.875rem, 2.5vw, 1rem);
-  --text-lg: clamp(1rem, 2.5vw, 1.125rem);
-  --text-xl: clamp(1.1rem, 3vw, 1.25rem);
-  --text-2xl: clamp(1.25rem, 3.5vw, 1.5rem);
-  --text-3xl: clamp(1.5rem, 4vw, 2rem);
-  --text-4xl: clamp(1.75rem, 5vw, 2.5rem);
-  --text-5xl: clamp(2rem, 6vw, 3.5rem);
-  --text-6xl: clamp(2.5rem, 8vw, 4.5rem);
-  --text-hero: clamp(2rem, 8vw, 5rem);
+  /* Type Scale - Fixed for predictable sizing */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.5rem;
+  --text-hero: clamp(2.5rem, 6vw, 5rem);
 
   /* Tracking - Tighter for modern look */
   --tracking-tighter: -0.05em;
   --tracking-tight: -0.025em;
   --tracking-normal: 0;
 
-  /* ===== SPACING - Fluid Responsive ===== */
-  --space-1: clamp(0.2rem, 0.5vw, 0.25rem);
-  --space-2: clamp(0.35rem, 1vw, 0.5rem);
-  --space-3: clamp(0.5rem, 1.5vw, 0.75rem);
-  --space-4: clamp(0.75rem, 2vw, 1rem);
-  --space-5: clamp(0.875rem, 2.5vw, 1.25rem);
-  --space-6: clamp(1rem, 3vw, 1.5rem);
-  --space-8: clamp(1.25rem, 4vw, 2rem);
-  --space-10: clamp(1.5rem, 5vw, 2.5rem);
-  --space-12: clamp(2rem, 6vw, 3rem);
-  --space-16: clamp(2.5rem, 8vw, 4rem);
-  --space-20: clamp(3rem, 10vw, 5rem);
-  --space-24: clamp(4rem, 12vw, 6rem);
+  /* ===== SPACING - Fixed for comfortable layout ===== */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
 
   /* ===== RADIUS - Larger for 2025 ===== */
   --radius-sm: 8px;
@@ -963,76 +963,34 @@ h6 {
 }
 
 /* ============================================
-   COMPREHENSIVE RESPONSIVE SYSTEM
+   SIMPLE RESPONSIVE SYSTEM
    ============================================ */
 
-/* Tablet and below (768px) */
+/* Tablet (768px) */
 @media (max-width: 768px) {
 
-  /* Cards - fluid and full width */
+  /* Cards - full width */
   .glass-card,
   .card,
-  .stat-card,
-  .summary-card,
   .data-card {
     width: 100%;
     max-width: 100%;
-    padding: var(--space-4);
-    border-radius: var(--radius-lg);
   }
 
-  /* Grids - single column */
+  /* Grids - 2 columns */
   .grid,
   .data-grid,
   .bento-grid {
-    grid-template-columns: 1fr !important;
-    gap: var(--space-3);
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-4);
   }
 
-  /* Stats grids - horizontal scroll */
+  /* Stats - 3 columns grid, no scroll */
   .stats-grid,
   .summary-cards {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: var(--space-2) !important;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: var(--space-2);
-  }
-
-  .stats-grid::-webkit-scrollbar,
-  .summary-cards::-webkit-scrollbar {
-    display: none;
-  }
-
-  .stats-grid>*,
-  .summary-cards>* {
-    flex: 0 0 auto;
-    min-width: 100px;
-    width: calc(33.333% - 8px);
-  }
-
-  /* Tables - horizontal scroll wrapper */
-  table,
-  .grade-table,
-  .data-table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-  }
-
-  /* Forms - full width */
-  input,
-  select,
-  textarea,
-  .form-input,
-  .form-select {
-    width: 100%;
-    min-height: 44px;
-    font-size: 16px;
-    /* Prevents iOS zoom */
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: var(--space-3);
   }
 
   /* Buttons - touch friendly */
@@ -1040,199 +998,163 @@ h6 {
   .btn,
   [class*="btn-"] {
     min-height: 44px;
-    padding: var(--space-3) var(--space-4);
   }
 
-  /* Modals - full screen */
+  /* Modals - better sizing */
   .modal,
-  .modal-card,
-  .modal-content {
-    width: 100% !important;
-    max-width: 100% !important;
+  .modal-card {
+    width: 95% !important;
+    max-width: 500px !important;
     max-height: 90vh;
-    margin: auto;
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  }
-
-  /* Hide desktop-only elements */
-  .desktop-only {
-    display: none !important;
-  }
-
-  /* Navigation adjustments */
-  .nav-links {
-    display: none;
   }
 }
 
-/* Mobile (480px and below) */
+/* Mobile (480px) */
 @media (max-width: 480px) {
 
-  /* Container padding */
+  /* Container - comfortable padding */
   .container {
-    padding-left: var(--space-3) !important;
-    padding-right: var(--space-3) !important;
+    padding-left: var(--space-4) !important;
+    padding-right: var(--space-4) !important;
   }
 
-  /* Headings scale */
+  /* Typography - readable sizes */
   h1,
   .page-title {
-    font-size: clamp(1.25rem, 5vw, 1.75rem) !important;
-    line-height: 1.2;
+    font-size: 1.5rem !important;
   }
 
   h2 {
-    font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
+    font-size: 1.25rem !important;
   }
 
   h3 {
-    font-size: clamp(1rem, 3.5vw, 1.25rem) !important;
+    font-size: 1.1rem !important;
   }
 
-  /* Body text */
-  p,
-  span,
-  label {
-    font-size: clamp(0.8rem, 3vw, 0.95rem);
+  /* Grids - single column */
+  .grid,
+  .data-grid,
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-4);
   }
 
-  /* Cards - more compact */
-  .glass-card,
-  .card,
-  .stat-card,
-  .summary-card {
-    padding: var(--space-3);
-    border-radius: var(--radius-md);
+  /* Stats - vertical stack */
+  .stats-grid,
+  .summary-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-3);
   }
 
-  /* Stats cards sizing */
   .stats-grid>*,
   .summary-cards>* {
-    min-width: 90px;
-    padding: var(--space-2) var(--space-3);
+    width: 100%;
+  }
+
+  /* Stat cards - comfortable sizing */
+  .stat-card,
+  .summary-card {
+    padding: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
   }
 
   .stat-value,
   .summary-value {
-    font-size: clamp(1rem, 4vw, 1.5rem) !important;
+    font-size: 1.5rem !important;
     font-weight: 700;
   }
 
   .stat-label,
   .summary-label {
-    font-size: clamp(0.6rem, 2.5vw, 0.75rem);
+    font-size: 0.875rem;
   }
 
   .stat-icon,
   .summary-icon {
-    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-size: 1.5rem;
   }
 
-  /* Tables compact */
+  /* Tables - readable */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   th,
   td {
-    padding: var(--space-2) var(--space-3);
-    font-size: clamp(0.75rem, 3vw, 0.9rem);
+    padding: var(--space-3);
+    font-size: 0.875rem;
   }
 
   th {
-    font-size: clamp(0.65rem, 2.5vw, 0.8rem);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 0.75rem;
   }
 
-  /* Sticky first column for tables */
+  /* Sticky first column */
   table th:first-child,
   table td:first-child {
     position: sticky;
     left: 0;
     z-index: 5;
     background: var(--bg-card, #16161e);
+    min-width: 120px;
   }
 
-  /* Buttons compact */
+  /* Forms - full width, readable */
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  /* Buttons - comfortable */
   button,
   .btn,
   [class*="btn-"] {
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--text-sm);
+    min-height: 48px;
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.95rem;
   }
 
-  /* Page headers */
+  /* Page header - stack */
   .page-header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-3);
+    gap: var(--space-4);
   }
 
-  /* View tabs */
+  /* View tabs - scrollable */
   .view-tabs {
     width: 100%;
     overflow-x: auto;
-    flex-wrap: nowrap;
     gap: var(--space-2);
+    flex-wrap: nowrap;
   }
 
   .view-tab {
-    flex: 0 0 auto;
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--text-sm);
-    white-space: nowrap;
+    flex-shrink: 0;
+    padding: var(--space-3);
+    font-size: 0.875rem;
   }
 
-  /* Spacing reductions */
-  .gap-4,
-  .gap-5,
-  .gap-6 {
-    gap: var(--space-2) !important;
+  /* Modals - full width */
+  .modal,
+  .modal-card,
+  .modal-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
 
-  .mb-6,
-  .mt-6,
-  .my-6 {
-    margin-top: var(--space-3) !important;
-    margin-bottom: var(--space-3) !important;
-  }
-
-  .p-4,
-  .p-5,
-  .p-6 {
-    padding: var(--space-3) !important;
-  }
-
-  /* Hide on mobile */
-  .mobile-hidden {
+  /* Hide desktop-only */
+  .desktop-only {
     display: none !important;
-  }
-}
-
-/* Small Mobile (360px and below) */
-@media (max-width: 360px) {
-
-  h1,
-  .page-title {
-    font-size: 1.1rem !important;
-  }
-
-  .stats-grid>*,
-  .summary-cards>* {
-    min-width: 80px;
-    padding: var(--space-2);
-  }
-
-  .stat-value,
-  .summary-value {
-    font-size: 0.95rem !important;
-  }
-
-  .stat-label,
-  .summary-label {
-    font-size: 0.55rem;
-  }
-
-  button,
-  .btn {
-    font-size: 0.8rem;
-    padding: var(--space-2);
   }
 }
